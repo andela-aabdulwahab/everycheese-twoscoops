@@ -14,6 +14,7 @@ class CheeseFactory(factory.django.DjangoModelFactory):
                                 variable_nb_sentences=True)
     firmness = (factory
                 .fuzzy.FuzzyChoice([x[0] for x in Cheese.FIRMNESS_CHOICES]))
+    country_of_origin = factory.Faker('country_code')
 
     class Meta:
         model = Cheese
